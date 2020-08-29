@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if session[:username]
       session[:username] = params[:username]
       redirect_to '/'
-      if session[:name].nil
+      if session[:name].present?
         session[:name]
       end
     else
